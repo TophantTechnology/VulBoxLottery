@@ -10,7 +10,7 @@ from collections import OrderedDict
 
 # 总奖券数，修改实际
 base = 100000
-total = 109
+total = 805
 # 随机种子seed，取自活动结束后比特币链上hash
 hash_seed = '000000000000000000085caefaa2eb088b184bd48e71948bebffc5e81a53fa39'
 
@@ -61,8 +61,8 @@ def save_file(rewards):
     c = 1
     f = open('Vulbox_lucky.csv', 'w')
     for r in rewards:
-        f.write(str(r) + '\n') # 一行一个号码，按每个奖项数量顺序从前往后取n个
-        print('%s' % (str(r)))
+        f.write(str(r) + ',' + str(rewards[r]) + '\n') # 一行一个号码，按每个奖项数量顺序从前往后取n个
+        print('%s,%s' % (str(r), str(rewards[r])))
         c += 1
 
     f.close()
